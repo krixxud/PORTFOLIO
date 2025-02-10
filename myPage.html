@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/webFont.css">
+    <link rel="stylesheet" href="./css/myPage.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/mypage.js" defer></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="index.html">live on</a></div>
+            <div class="nav-links">
+                <a href="./product.html" class="lnb">매물찾기</a>
+                <a href="./comunity.html" class="lnb">커뮤니티</a>
+                <a href="./company.html" class="lnb">회사소개</a>
+                <a href="./myPage.html" class="lnb">마이페이지</a>
+                <a href="./login.html" class="lnb">로그인</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 마이페이지 컨텐츠 -->
+    <main class="mypage-container">
+        <!-- 프로필 섹션 -->
+        <section class="profile-section">
+            <div class="profile-image" id="profileImage">
+                <i class="fas fa-user fa-3x" style="color: #ccc;"></i>
+            </div>
+            <div class="profile-info">
+                <h2 class="profile-name" id="profileName">권기영님</h2>
+                <p class="profile-email" id="profileEmail">hong@example.com</p>
+                <button class="edit-profile-btn" id="editProfileBtn">프로필 수정</button>
+            </div>
+        </section>
+
+        <!-- 탭 메뉴 -->
+        <div class="tab-container">
+            <button class="tab-button active" data-tab="favorites">관심 매물</button>
+            <button class="tab-button" data-tab="inquiries">문의 내역</button>
+            <button class="tab-button" data-tab="notifications">알림</button>
+            <button class="tab-button" data-tab="settings">계정 설정</button>
+        </div>
+
+        <!-- 메인 컨텐츠 그리드 -->
+        <div class="mypage-grid">
+            <!-- 관심 매물 -->
+            <div class="tab-content active" id="favorites">
+                <div class="mypage-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-heart card-icon"></i>
+                            관심 매물
+                        </h3>
+                    </div>
+                    <div class="property-item">
+                        <div class="property-info">
+                            <div class="property-name">래미안 퍼스트하이</div>
+                            <div class="property-detail">강남구 삼성동 | 84㎡ | 8.5억</div>
+                        </div>
+                    </div>
+                    <div class="property-item">
+                        <div class="property-info">
+                            <div class="property-name">반포 자이</div>
+                            <div class="property-detail">서초구 반포동 | 115㎡ | 15억</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 최근 본 매물 -->
+                <div class="mypage-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-clock card-icon"></i>
+                            최근 본 매물
+                        </h3>
+                    </div>
+                    <div class="property-item">
+                        <div class="property-info">
+                            <div class="property-name">힐스테이트 센트럴</div>
+                            <div class="property-detail">송파구 잠실동 | 109㎡ | 13.2억</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 문의 내역 탭 -->
+            <div class="tab-content" id="inquiries">
+                <div class="mypage-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-question-circle card-icon"></i>
+                            문의 내역
+                        </h3>
+                    </div>
+                    <div class="property-item">
+                        <div class="property-info">
+                            <div class="property-name">래미안 퍼스트하이 관련 문의</div>
+                            <div class="property-detail">2024.02.05 | 답변 완료</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 알림 -->
+            <div class="tab-content" id="notifications">
+                <div class="mypage-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-bell card-icon"></i>
+                            알림
+                        </h3>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-content">관심 매물 '래미안 퍼스트하이'의 가격이 변동되었습니다.</div>
+                        <div class="notification-date">2024.02.06</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 계정 설정 탭 -->
+            <div class="tab-content" id="settings">
+                <div class="mypage-card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-cog card-icon"></i>
+                            계정 설정
+                        </h3>
+                    </div>
+                    <div class="property-item">
+                        <div class="property-info">
+                            <div class="property-name">비밀번호 변경</div>
+                            <div class="property-detail">마지막 변경: 2024.01.15</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 프로필 수정 모달 -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>프로필 수정</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form class="profile-form" id="profileForm">
+                <div class="profile-image-upload">
+                    <div class="profile-image">
+                        <i class="fas fa-user fa-3x" style="color: #ccc;"></i>
+                    </div>
+                    <div class="filebox">
+                        <input class="profileImageInput" value="첨부파일" placeholder="첨부파일">
+                        <label for="file">파일찾기</label> 
+                        <input type="file" id="file" accept="image/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">이름</label>
+                    <input type="text" id="nameInput" value="권기영">
+                </div>
+                <div class="form-group">
+                    <label for="emailInput">이메일</label>
+                    <input type="email" id="emailInput" value="hong@example.com">
+                </div>
+                <button type="submit" class="save-profile-btn">저장하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 실시간 상담 챗봇 -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-window">
+            <div class="chat-header">
+                실시간 상담
+                <button class="close-chat">×</button>
+            </div>
+            <div class="chat-messages">
+                <div class="chat-message system">
+                    무엇을 도와드릴까요?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="메시지를 입력하세요...">
+                <button class="send-message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Live On. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

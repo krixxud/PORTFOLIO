@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매물 찾기</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/webFont.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="./js/common.js" defer></script>
+    <script src="./js/product.js" defer></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 헤더/네비게이션 -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="./index.html">live on</a></div>
+            <div class="nav-links">
+                <a href="/product.html" class="lnb">매물찾기</a>
+                <a href="./comunity.html" class="lnb">커뮤니티</a>
+                <a href="./company.html" class="lnb">회사소개</a>
+                <a href="./mypage.html" class="lnb">마이페이지</a>
+                <a href="./login.html" class="lnb">로그인</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <h1>매물 찾기</h1>
+        <p>프리미엄 주거공간을 검색하고 비교해보세요.</p>
+    </section>
+
+    <div class="main-content">
+        <!-- 좌측 검색 필터 -->
+        <section id="search-filters">
+            <h2>상세 검색</h2>
+            
+            <div class="filter-section">
+                <h3>주거 유형</h3>
+                <div class="filter-buttons">
+                    <button onclick="filterType('all')" class="active">전체</button>
+                    <button onclick="filterType('아파트')">아파트</button>
+                    <button onclick="filterType('오피스텔')">오피스텔</button>
+                    <button onclick="filterType('빌라')">빌라</button>
+                    <button onclick="filterType('단독주택')">단독주택</button>
+                </div>
+            </div>
+        
+            <div class="filter-section">
+                <h3>지역</h3>
+                <div class="filter-buttons">
+                    <button onclick="filterType('all')">전체</button>
+                    <button>강남구</button>
+                    <button>서초구</button>
+                    <button>송파구</button>
+                    <button>마포구</button>
+                </div>
+            </div>
+        
+            <div class="filter-section">
+                <h3>가격대</h3>
+                <div class="filter-buttons">
+                    <button onclick="filterType('all')">전체</button>
+                    <button>5억 이하</button>
+                    <button>5억-10억</button>
+                    <button>10억 이상</button>
+                </div>
+            </div>
+        
+            <div class="filter-section">
+                <h3>면적</h3>
+                <div class="filter-buttons">
+                    <button onclick="filterType('all')">전체</button>
+                    <button>30평 이하</button>
+                    <button>30-50평</button>
+                    <button>50평 이상</button>
+                </div>
+            </div>
+        
+            <div class="filter-section">
+                <h3>방 개수</h3>
+                <div class="filter-buttons">
+                    <button onclick="filterType('all')">전체</button>
+                    <button>1-2룸</button>
+                    <button>3-4룸</button>
+                    <button>5룸 이상</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 우측 매물 목록 -->
+        <section id="property-list">
+            <div class="sort-options">
+                <select>
+                    <option>최신순</option>
+                    <option>가격 낮은순</option>
+                    <option>가격 높은순</option>
+                    <option>면적 넓은순</option>
+                </select>
+            </div>
+
+            <div class="grid" id="propertyGrid">
+                <!-- 매물 1 -->
+
+                <div class="grid-item" data-type="아파트">
+                    <a href="productSub.html">
+                        <img src="./images/lemian.jpg" alt="래미안 퍼스트하이">
+                        <div class="property-info">
+                            <span class="property-tag">아파트</span>
+                            <h3>래미안 퍼스트하이</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>강남구 삼성동</span>
+                            </div>
+                            <div class="property-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">면적</span>
+                                    <span class="detail-value">84㎡</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">가격</span>
+                                    <span class="detail-value price">8.5억</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid-item" data-type="아파트">
+                    <a href="./banpo.html">
+                        <img src="./images/banpo.jpg" alt="반포자이">
+                        <div class="property-info">
+                            <span class="property-tag">아파트</span>
+                            <h3>반포 자이</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>서초구 반포동</span>
+                            </div>
+                            <div class="property-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">면적</span>
+                                    <span class="detail-value">115㎡</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">가격</span>
+                                    <span class="detail-value price">15억</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="grid-item" data-type="아파트">
+                    <img src="./images/hillstate.jpg" alt="힐스테이트 센트럴">
+                    <div class="property-info">
+                        <span class="property-tag">아파트</span>
+                        <h3>힐스테이트 센트럴</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>송파구 잠실동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">109㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">13.2억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="아파트">
+                    <img src="./images/seocho.jpg" alt="서초 센트럴파크">
+                    <div class="property-info">
+                        <span class="property-tag">아파트</span>
+                        <h3>서초 센트럴파크</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>서초구 서초동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">115㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">16.5억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="오피스텔">
+                    <img src="./images/yongsan.jpg" alt="용산 파크뷰">
+                    <div class="property-info">
+                        <span class="property-tag">오피스텔</span>
+                        <h3>용산 파크뷰</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>용산구 한남동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">71㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">7.8억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="오피스텔">
+                    <img src="./images/songpa.jpg" alt="송파 하이파크">
+                    <div class="property-info">
+                        <span class="property-tag">오피스텔</span>
+                        <h3>송파 하이파크</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>송파구 잠실동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">59㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">5.2억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="오피스텔">
+                    <img src="./images/signiture.jpg" alt="강남 시그니처">
+                    <div class="property-info">
+                        <span class="property-tag">오피스텔</span>
+                        <h3>강남 시그니처</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>강남구 역삼동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">45㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">4.9억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="빌라">
+                    <img src="./images/rezent.jpg" alt="서초 리젠트 빌라">
+                    <div class="property-info">
+                        <span class="property-tag">빌라</span>
+                        <h3>서초 리젠트 빌라</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>서초구 방배동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">91㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">6.8억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="빌라">
+                    <img src="./images/gogeup.jpg" alt="한남동 고급빌라">
+                    <div class="property-info">
+                        <span class="property-tag">빌라</span>
+                        <h3>한남동 고급빌라</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>용산구 한남동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">145㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">11.2억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="빌라">
+                    <img src="./images/luxury.jpg" alt="청담동 럭셔리빌라">
+                    <div class="property-info">
+                        <span class="property-tag">빌라</span>
+                        <h3>청담동 럭셔리빌라</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>강남구 청담동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">132㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">9.8억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="단독주택">
+                    <img src="./images/mapo.jpg" alt="마포 단독주택">
+                    <div class="property-info">
+                        <span class="property-tag">단독주택</span>
+                        <h3>마포 프리미엄 단독주택</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>마포구 연남동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">132㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">12억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="단독주택">
+                    <img src="./images/townhouse.jpg" alt="연남동 타운하우스">
+                    <div class="property-info">
+                        <span class="property-tag">단독주택</span>
+                        <h3>연남동 타운하우스</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>마포구 연남동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">198㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">14.8억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="단독주택">
+                    <img src="./images/sungsu.jpg" alt="성수동 단독주택">
+                    <div class="property-info">
+                        <span class="property-tag">단독주택</span>
+                        <h3>성수동 단독주택</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>성동구 성수동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">165㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">18.5억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="아파텔">
+                    <img src="./images/ruche.jpg" alt="강동 루체스타">
+                    <div class="property-info">
+                        <span class="property-tag">아파텔</span>
+                        <h3>강동 루체스타</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>강동구 천호동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">43㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">4.2억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="grid-item" data-type="아파텔">
+                    <img src="./images/the_river.jpg" alt="성수 더 리버">
+                    <div class="property-info">
+                        <span class="property-tag">아파텔</span>
+                        <h3>성수 더 리버</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>성동구 성수동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">68㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">6.4억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item" data-type="아파텔">
+                    <img src="./images/west.jpg" alt="마포 웨스트포인트">
+                    <div class="property-info">
+                        <span class="property-tag">아파텔</span>
+                        <h3>마포 웨스트포인트</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>마포구 공덕동</span>
+                        </div>
+                        <div class="property-details">
+                            <div class="detail-item">
+                                <span class="detail-label">면적</span>
+                                <span class="detail-value">56㎡</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">가격</span>
+                                <span class="detail-value price">5.3억</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <div class="pagination">
+        <button id="prevPage">&lt; 이전</button>
+        <div id="pageNumbers" class="page-numbers"></div>
+        <button id="nextPage">다음 &gt;</button>
+    </div>
+    </main>
+
+    <!-- 실시간 상담 챗봇 -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-window">
+            <div class="chat-header">
+                실시간 상담
+                <button class="close-chat">×</button>
+            </div>
+            <div class="chat-messages">
+                <div class="chat-message system">
+                    무엇을 도와드릴까요?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="메시지를 입력하세요...">
+                <button class="send-message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 무직부동산. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

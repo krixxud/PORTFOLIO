@@ -1,0 +1,894 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+/* 헤더 스타일 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.header a.scrolled {
+  color: #000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo a {
+  color: rgb(255, 255, 255);
+  font-family: 'Hahmlet-Regular';
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: scale 0.3s ease;
+}
+
+.lnb.scrolled {
+  color: #000;
+}
+
+.nav-links a:hover {
+  scale: 1.1;
+}
+
+/* 히어로 섹션 */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(../images/main.jpg) center/cover fixed;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+  color: white;
+  width: 90%;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease;
+  font-weight: 300;
+}
+
+.hero-subtitle {
+  font-weight: 200;
+  font-size: 1.5rem;
+  margin-bottom: 7rem;
+  animation: fadeInUp 1s ease 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.cta-button {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #ffffff33;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: fadeInUp 1s ease 0.4s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.btn {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #E7C49C;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: fadeInUp 1s ease 0.4s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.filter-section {
+  display: flex;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-item {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.search-container input[type="search"] {
+  flex: 2;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.search-btn {
+  background: #E7C49C;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.search-btn:hover {
+  background: #d6a268;
+}
+
+
+.search-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+
+.search { 
+  position: relative;
+  top: 0;
+  left: 50%;
+  background: #fff;
+  width: 600px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  margin-top: 100px;
+  transform: translateX(-50%);
+}
+
+.search input {
+  all: unset;
+  position: relative;
+  width: 80%;
+  border: none;
+  height: 100%;
+  left: 0%;
+  color: #000;
+  text-align: left;
+}
+
+.search-btn img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 25%;
+  left: 25%;
+  transform: translateY(-50%), translateX(-50%);
+  filter: invert(100%);
+}
+
+/* 부동산 리스트 섹션 */
+.properties {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.properties.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 70px;
+}
+
+.property-card {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.property-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #E7C49C;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+.property-badge.premium {
+  background: #FFD700;
+}
+
+.like-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+.like-btn i {
+  color: #ff4b4b;
+  font-size: 1.2rem;
+}
+
+.property-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.property-card:hover .property-image {
+  transform: scale(1.1);
+  /* hover 시 이미지 확대 */
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  /* 트랜지션 효과 추가 */
+}
+
+.property-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  /* 이미지가 컨테이너를 벗어나지 않도록 설정 */
+}
+
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.property-content {
+  padding: 1.5rem;
+}
+
+.property-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.property-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #E7C49C;
+  margin: 0.5rem 0;
+}
+
+.property-info {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+
+.property-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.property-info-item i {
+  color: #E7C49C;
+  width: 16px;
+}
+
+.property-features {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.property-features span {
+  background: #f5f5f5;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.view-detail-btn {
+  width: 100%;
+  background: #E7C49C;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-detail-btn:hover {
+  background: #d6a268;
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.property-details {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+}
+
+.details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.detail-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-title {
+  font-size: 1.2rem;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* 상세 정보 스타일 보강 */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem;
+}
+
+.detail-box {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.detail-box:hover {
+  transform: translateY(-5px);
+}
+
+.detail-icon {
+  font-size: 2rem;
+  color: #e5b57e;
+  margin-bottom: 1rem;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.spec-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 입지 분석 스타일 */
+#location {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#location.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.analysis-grid {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 5rem;
+  margin: 0 auto;
+}
+
+.analysis-item {
+  background: white;
+  padding: 3rem 4rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#location.animate .analysis-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.analysis-title {
+  color: #d39958;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+      font-size: 1.2rem;
+  }
+
+  .nav-links {
+      display: none;
+  }
+}
+
+/* main.css에 추가할 스타일 */
+.property-sections {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tab-container {
+  width: 100%;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  padding: 1rem;
+  border: none;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tab-button i {
+  font-size: 1.2rem;
+}
+
+.tab-button.active {
+  background: #E7C49C;
+  color: white;
+}
+
+.tab-button:hover {
+  background: #e5e5e5;
+}
+
+.tab-button.active:hover {
+  background: #d6a268;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+/* 분양가 테이블 스타일 */
+.price-info-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.price-table.full-width {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table.full-width th,
+.price-table.full-width td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.price-table.full-width th {
+  background: #E7C49C;
+  color: white;
+}
+
+.price-table.full-width tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .tabs {
+      grid-template-columns: 1fr;
+  }
+
+  .price-info-container {
+      overflow-x: auto;
+  }
+
+  .property-sections {
+      padding: 3rem 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* 실시간 채팅 스타일 */
+.chat-widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.chat-button {
+  background: #E7C49C;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.chat-button i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.close-chat { 
+  font-size: 1.5rem;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+.chat-window {
+  position: absolute;
+   bottom: 80px;
+   right: 0;
+   width: 300px;
+   height: 400px;
+   background: white;
+   border-radius: 15px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   display: none;
+   flex-direction: column;
+}
+
+.chat-window.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 1rem;
+   background: #E7C49C;
+   color: white;
+   border-radius: 15px 15px 0 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.chat-message.system {
+  background: #f5f5f5;
+  margin-right: auto;
+}
+
+.chat-message.user {
+  background: #E7C49C;
+  margin-left: auto;
+}
+
+.chat-input {
+  padding: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.send-message {
+   background: #E7C49C;
+   border: none;
+   border-radius: 5px;
+   width: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+}
+
+.send-message i {
+   color: white;
+}
+
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .filter-section {
+      flex-direction: column;
+  }
+  
+  .property-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .chat-window {
+      width: 100%;
+      height: 100vh;
+      bottom: 0;
+      right: 0;
+      border-radius: 0;
+  }
+}
+
+/* 푸터 스타일 */
+.footer {
+  background: #d6a268;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 2px solid #ffffff;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+/* 섹션별 배경색 구분 */
+section:nth-child(even) {
+  background-color: #ffffff;
+}
+
+section:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* 이미지 갤러리 스타일 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 250px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* 시설 정보 아이콘 스타일 */
+.facility-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.facility-icon i {
+  color: #e5b57e;
+  width: 20px;
+}
+
+/* 분양가 정보 테이블 스타일 */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.price-table th,
+.price-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.price-table th {
+  background: #d39958;
+  color: white;
+}
+
+.price-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
