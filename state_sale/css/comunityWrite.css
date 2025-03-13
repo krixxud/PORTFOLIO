@@ -1,0 +1,346 @@
+        /* 기존 헤더/푸터 스타일 유지 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            color: #000;
+            font-family: 'Hahmlet-Regular';
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            transition: scale 0.3s ease;
+        }
+
+        /* 글쓰기 페이지 스타일 */
+        .write-container {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 2rem;
+        }
+
+        .write-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #E7C49C;
+        }
+
+        .write-header h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .write-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #E7C49C;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 300px;
+            resize: vertical;
+        }
+
+        .image-upload {
+            border: 2px dashed #ddd;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .image-upload:hover {
+            border-color: #E7C49C;
+        }
+
+        .image-upload i {
+            font-size: 2rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: flex-end;
+        }
+
+        .submit-button,
+        .cancel-button {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button {
+            background: #E7C49C;
+            color: white;
+            border: none;
+        }
+
+        .submit-button:hover {
+            background: #d6a268;
+        }
+
+        .cancel-button {
+            background: white;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+
+        .cancel-button:hover {
+            background: #f5f5f5;
+        }
+
+        .tag-input-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .tag {
+            background: #E7C49C;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tag button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1rem;
+        }
+
+        .tag-input {
+            border: none;
+            outline: none;
+            flex: 1;
+            min-width: 100px;
+            padding: 0.3rem;
+        }
+
+        /* 푸터 스타일 유지 */
+        .footer {
+            background: #d6a268;
+            color: white;
+            padding: 1rem 2rem;
+            margin-top: 50px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 2px solid #ffffff;
+        }
+
+        /* 실시간 채팅 스타일 */
+.chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+  }
+  
+  .chat-button {
+    background: #E7C49C;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chat-button i {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .close-chat { 
+    font-size: 1.5rem;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  
+  .chat-window {
+    position: absolute;
+     bottom: 80px;
+     right: 0;
+     width: 300px;
+     height: 400px;
+     background: white;
+     border-radius: 15px;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+     display: none;
+     flex-direction: column;
+  }
+  
+  .chat-window.active {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    padding: 1rem;
+     background: #E7C49C;
+     color: white;
+     border-radius: 15px 15px 0 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    max-width: 80%;
+  }
+  
+  .chat-message.system {
+    background: #f5f5f5;
+    margin-right: auto;
+  }
+  
+  .chat-message.user {
+    background: #E7C49C;
+    margin-left: auto;
+  }
+  
+  .chat-input {
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .send-message {
+     background: #E7C49C;
+     border: none;
+     border-radius: 5px;
+     width: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+  }
+  
+  .send-message i {
+     color: white;
+  }
+  
+  
+  /* 반응형 디자인 */
+  @media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+    }
+    
+    .property-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chat-window {
+        width: 100%;
+        height: 100vh;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+  }
+  

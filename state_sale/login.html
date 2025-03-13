@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/webFont.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="./js/login.js" defer></script>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="index.html">live on</a></div>
+    </header>
+
+    <!-- 로그인 폼 -->
+    <div class="login-container">
+        <div class="login-header">
+            <h1>로그인</h1>
+            <p>live on과 함께 하세요.</p>
+        </div>
+
+        <form class="login-form">
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" placeholder="이메일을 입력하세요." required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" placeholder="비밀번호를 입력하세요." required>
+            </div>
+
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">로그인 상태 유지</label>
+                </div>
+                <a href="#" class="forgot-password">비밀번호 찾기</a>
+            </div>
+
+            <button type="submit" class="login-button">로그인</button>
+
+            <div class="signup-link">
+                아직 회원이 아니신가요? <a href="./signUp.html">회원가입</a>
+            </div>
+        </form>
+
+        <div class="social-login">
+            <p>간편 로그인</p>
+            <div class="social-buttons">
+                <div class="social-button kakao">
+                    <a href="http://accounts.kakao.com/login/?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount#login"
+                        style="color: black;">
+                        <i class="fas fa-comment"></i>
+                    </a>
+                </div>
+                <div class="social-button naver">
+                    <a href="https://nid.naver.com/nidlogin.login">
+                        <span>N</span>
+                    </a>
+                </div>
+                <div class="social-button google">
+                    <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2F%3Fhl%3Dko&ec=futura_exp_og_so_72776762_e&hl=ko&passive=true&ifkv=AVdkyDnrkLhsZoveBsGU_wLJWLJ1xtvGygjTch1u1CKaa8wR23lGq586qQ99NkmChyfg_UD9awE4VQ&ddm=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                        style="color: white;">
+                        <i class="fab fa-google"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
